@@ -1,0 +1,129 @@
+% Template.sty
+% Version: 11.10.2020
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amsfonts, amssymb, amsthm, graphicx, tikz, float, pdfpages}
+\usepackage[left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm, headsep=1.2cm]{geometry}
+%=========================================================
+% Change font:
+%\usepackage{times}
+%=========================================================
+% Footnotes:
+%\setlength{\skip\footins}{10mm}
+%\setlength{\footnotesep}{5mm} 
+%\interfootnotelinepenalty=10000
+%=========================================================
+% Parskip and parindent:
+%\setlength{\parskip}{\bigskipamount}
+%\setlength{\parindent}{0mm}
+%=========================================================
+% Header:
+	%\usepackage[headsepline]{scrpage2}
+	%\pagestyle{scrheadings}
+	%\ihead{\Title}
+%=========================================================
+% Title, author and date:
+%\title{\Title}
+%\author{\Author}
+%\date{\Date}
+%=========================================================
+% Create title page:
+\newcommand{\maketitlepage}
+{\begin{titlepage}
+	\centering
+	\vspace*{6cm}
+	{\LARGE\@title\par}
+	\vspace{2cm}
+	{\Large\@author\par}
+	\vfill
+	{\large\@date\par}
+	\vspace{3cm}
+\end{titlepage}}
+%=========================================================
+% Abstract:
+\usepackage{abstract}
+%=========================================================
+% Colors and links:
+\usepackage{color}
+\definecolor{blue}{rgb}{0,0,0.7}
+\usepackage[colorlinks=false,urlcolor=blue]{hyperref}
+%=========================================================
+% Listings:
+\usepackage{courier}
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily\footnotesize, numbers=left, breaklines=false, showstringspaces=false}
+%=========================================================
+% Theorems, Definitions etc.:
+\newcommand{\theoremname}{\iflanguage{german}{Satz}{Theorem}}
+\newcommand{\corollaryname}{\iflanguage{german}{Korollar}{Corollary}}
+\newcommand{\examplename}{\iflanguage{german}{Beispiel}{Example}}
+\newcommand{\solutionname}{\iflanguage{german}{Lösung}{Solution}}
+\newcommand{\remarkname}{\iflanguage{german}{Bemerkung}{Remark}}
+\theoremstyle{plain}
+\newtheorem{theorem}{\theoremname}[section]
+\newtheorem*{theorem*}{\theoremname}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem*{lemma*}{Lemma}
+\newtheorem{corollary}[theorem]{\corollaryname}
+\newtheorem*{corollary*}{\corollaryname}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem*{definition*}{Definition}
+\newtheorem{example}[theorem]{\examplename}
+\newtheorem*{example*}{\examplename}
+\newtheorem*{solution}{\solutionname}
+\newtheorem{remark}[theorem]{\remarkname}
+\newtheorem*{remark*}{\remarkname}
+%=========================================================
+% Own commands:
+\providecommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+\providecommand{\ceil}[1]{\left\lceil #1 \right\rceil}
+%=========================================================
+% Number sets:
+\def\N{\mathbb{N}}
+\def\Nn{\mathbb{N}_0}
+\def\Z{\mathbb{Z}}
+\def\Zp{\mathbb{Z}^+}
+\def\Zpn{\mathbb{Z}_0^+}
+\def\Zm{\mathbb{Z}^-}
+\def\Q{\mathbb{Q}}
+\def\Qp{\mathbb{Q}^+}
+\def\Qpn{\mathbb{Q}_0^+}
+\def\Qm{\mathbb{Q}^-}
+\def\R{\mathbb{R}}
+\def\Rp{\mathbb{R}^+}
+\def\Rpn{\mathbb{R}_0^+}
+\def\Rm{\mathbb{R}^-}
+\def\C{\mathbb{C}}
+\def\D{\mathbb{D}}
+\def\T{\mathbb{T}}
+\def\F{\mathbb{F}}
+\def\P{\mathbb{P}}
+\def\E{\mathbb{E}}
+\def\V{\mathbb{V}}
+%=========================================================
+% Other symbols:
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\codim}{codim}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\coim}{coim}
+\DeclareMathOperator{\grad}{grad}
+\DeclareMathOperator{\divg}{div}
+\DeclareMathOperator{\rot}{rot}
+\DeclareMathOperator{\curl}{curl}
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\arccsc}{arccsc}
+\DeclareMathOperator{\arccot}{arccot}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
+\DeclareMathOperator{\arsinh}{arsinh}
+\DeclareMathOperator{\arcosh}{arcosh}
+\DeclareMathOperator{\artanh}{artanh}
+\DeclareMathOperator{\arsech}{arsech}
+\DeclareMathOperator{\arcsch}{arcsch}
+\DeclareMathOperator{\arcoth}{arcoth}
+%=========================================================
+\AtBeginDocument{\renewcommand\abstractname{Abstract}}
