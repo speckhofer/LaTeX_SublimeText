@@ -1,9 +1,9 @@
 % Template.sty
-% Version: 11.10.2020
+% Version: 26.11.2020
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
-\usepackage{amsmath, amsfonts, amssymb, amsthm, graphicx, tikz, float, pdfpages}
+\usepackage{amsmath, amsfonts, amssymb, amsthm, graphicx, tikz, float, pdfpages, enumerate, mathrsfs, thmtools}
 \usepackage[left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm, headsep=1.2cm]{geometry}
 %=========================================================
 % Change font:
@@ -58,23 +58,61 @@
 \newcommand{\theoremname}{\iflanguage{german}{Satz}{Theorem}}
 \newcommand{\corollaryname}{\iflanguage{german}{Korollar}{Corollary}}
 \newcommand{\examplename}{\iflanguage{german}{Beispiel}{Example}}
+\newcommand{\problemname}{\iflanguage{german}{Aufgabe}{Problem}}
 \newcommand{\solutionname}{\iflanguage{german}{Lösung}{Solution}}
 \newcommand{\remarkname}{\iflanguage{german}{Bemerkung}{Remark}}
-\theoremstyle{plain}
-\newtheorem{theorem}{\theoremname}[section]
-\newtheorem*{theorem*}{\theoremname}
-\newtheorem{lemma}[theorem]{Lemma}
-\newtheorem*{lemma*}{Lemma}
-\newtheorem{corollary}[theorem]{\corollaryname}
-\newtheorem*{corollary*}{\corollaryname}
-\theoremstyle{definition}
-\newtheorem{definition}[theorem]{Definition}
-\newtheorem*{definition*}{Definition}
-\newtheorem{example}[theorem]{\examplename}
-\newtheorem*{example*}{\examplename}
-\newtheorem*{solution}{\solutionname}
-\newtheorem{remark}[theorem]{\remarkname}
-\newtheorem*{remark*}{\remarkname}
+
+% Old theorem definitions without coloured boxes:
+%\theoremstyle{plain}
+%\newtheorem{theorem}{\theoremname}[section]
+%\newtheorem*{theorem*}{\theoremname}
+%\newtheorem{lemma}[theorem]{Lemma}
+%\newtheorem*{lemma*}{Lemma}
+%\newtheorem{proposition}[theorem]{Proposition}
+%\newtheorem*{proposition*}{Proposition}
+%\newtheorem{corollary}[theorem]{\corollaryname}
+%\newtheorem*{corollary*}{\corollaryname}
+%\theoremstyle{definition}
+%\newtheorem{definition}[theorem]{Definition}
+%\newtheorem*{definition*}{Definition}
+%\newtheorem{example}[theorem]{\examplename}
+%\newtheorem*{example*}{\examplename}
+%\newtheorem{problem}[theorem]{\examplename}
+%\newtheorem*{problem*}{\problemname}
+%\newtheorem*{solution}{\solutionname}
+%\newtheorem{remark}[theorem]{\remarkname}
+%\newtheorem*{remark*}{\remarkname}
+
+\declaretheoremstyle[
+	shaded={bgcolor={HTML}{FFE6E6},rulecolor={HTML}{FF0000},rulewidth=0.5pt}
+]{red}
+\declaretheoremstyle[
+	shaded={bgcolor={HTML}{E6E6FF},rulecolor={HTML}{0000FF},rulewidth=0.5pt},
+    bodyfont=\itshape
+]{blue}
+\declaretheoremstyle[
+	shaded={bgcolor={HTML}{FFF6DC},rulecolor={HTML}{FFBF00},rulewidth=0.5pt}
+]{yellow}
+\declaretheoremstyle[
+	shaded={bgcolor={HTML}{E0FFE0},rulecolor={HTML}{00DD00},rulewidth=0.5pt}
+]{green}
+\declaretheorem[style=blue, name=\theoremname, numberwithin=section]{theorem}
+\declaretheorem[style=blue, name=\theoremname, unnumbered]{theorem*}
+\declaretheorem[style=blue, name=Lemma, sibling=theorem]{lemma}
+\declaretheorem[style=blue, name=Lemma, unnumbered]{lemma*}
+\declaretheorem[style=blue, name=Proposition, sibling=theorem]{proposition}
+\declaretheorem[style=blue, name=Proposition, unnumbered]{proposition*}
+\declaretheorem[style=blue, name=\corollaryname, sibling=theorem]{corollary}
+\declaretheorem[style=blue, name=\corollaryname, unnumbered]{corollary*}
+\declaretheorem[style=red, name=Definition, sibling=theorem]{definition}
+\declaretheorem[style=red, name=Definition, unnumbered]{definition*}
+\declaretheorem[name=\examplename, sibling=theorem]{example}
+\declaretheorem[name=\examplename, unnumbered]{example*}
+\declaretheorem[style=yellow, name=\problemname, sibling=theorem]{problem}
+\declaretheorem[style=yellow, name=\problemname, unnumbered]{problem*}
+\declaretheorem[name=\solutionname, unnumbered]{solution}
+\declaretheorem[style=green, name=\remarkname, sibling=theorem]{remark}
+\declaretheorem[style=green, name=\remarkname, unnumbered]{remark*}
 %=========================================================
 % Own commands:
 \providecommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
@@ -110,6 +148,7 @@
 \DeclareMathOperator{\codim}{codim}
 \DeclareMathOperator{\coker}{coker}
 \DeclareMathOperator{\coim}{coim}
+\DeclareMathOperator{\lc}{lc}
 \DeclareMathOperator{\grad}{grad}
 \DeclareMathOperator{\divg}{div}
 \DeclareMathOperator{\rot}{rot}
