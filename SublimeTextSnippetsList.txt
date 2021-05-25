@@ -13,7 +13,7 @@ qed + tab "\qed"
 #  Math modes  #
 ################
 
-mk "$  $" (inline math mode)
+mk "$$" (inline math mode)
 dm "\[  \]" (display math mode)
 ali + tab "\begin{align*} \end{align*}
 eq + tab "\begin{equation} \end{equation}
@@ -42,22 +42,19 @@ lrnor "\left\|  \right\|"
 #  Mathematical symbols  #
 ##########################
 
-= " = " (adds spaces)
-> " > " (adds spaces)
-< " < " (adds spaces)
-!= " \neq "
-== "&= " (adds space only after "&=" because often lines start with "&=")
-equiv " \equiv "
-app " \approx "
-~~ " \sim "
->= " \geq "
-<= " \leq "
->> " \gg "
-<< " \ll "
+!= "\neq "
+== "&="
+equiv "\equiv "
+app "\approx "
+~~ "\sim "
+>= "\geq "
+<= "\leq "
+>> "\gg "
+<< "\ll "
 +- "\pm"
 -+ "\mp"
-** " \cdot "
-xx " \times "
+** "\cdot "
+xx "\times "
 sq "\sqrt{}"
 sr "^2"
 cb "^3"
@@ -66,20 +63,20 @@ rd "^{()}"
 __ "_{}"
 EE "\exists "
 AA "\forall "
-iff " \iff "
-=> " \implies "
-=< " \impliedby "
--> " \to "
-<- " \leftarrow "
-inn " \in "
-notin " \notin "
+iff "\iff "
+=> "\implies "
+=< "\impliedby "
+-> "\to "
+<- "\leftarrow "
+inn "\in "
+notin "\notin "
 ... "\dots"
 oo "\infty"
 :: "\colon "
-mid " \mid "
-nmid " \nmid "
-mod " \mod "
-pmod " \pmod{}"
+mid "\mid "
+nmid "\nmid "
+mod "\mod "
+pmod "\pmod{}"
 <> "\diamond"
 // "\frac{}{}"
 case "\begin{cases} \end{cases}"
@@ -113,7 +110,6 @@ iiiint "\iiiint"
 idotsi "\idotsint"
 oint "\oint"
 dd "\mathrm{d}"
-, ", " (adds space)
 ,, "\, "
 op "\operatorname{...}"
 par "\partial"
@@ -122,13 +118,13 @@ par "\partial"
 #  Special functions and math operators  #
 ##########################################
 
-sin|cos|tan|sec|csc|cot|min|max|inf|sup|log|exp|ln|perp|parallel|circ|ker|im|coker|coim|dim|codim|det|gcd|lcm|sgn|nabla|grad|divg|rot|Re|Im "\sin|\cos|..." (adds backslash)
+sin|cos|tan|sec|csc|cot|min|max|inf|sup|log|exp|ln|perp|circ|ker|im|coker|coim|dim|codim|det|gcd|lcm|sgn|nabla|grad|divg|rot|Re|Im "\sin|\cos|..." (adds backslash)
 arcsin|arccos|arctan|arcsec|arccsc|arccot "\arcsin|\arccos|..." (adds backslash)
 arsinh|arcosh|artanh|arsech|arcsch|arcoth "\arsinh|\arcosh|..." (adds backslash)
 
 Python code for generating all the snippets of this section:
 
-text = "sin|cos|tan|sec|csc|cot|arcsin|arccos|arctan|arcsec|arccsc|arccot|arsinh|arcosh|artanh|arsech|arcsch|arcoth|min|max|inf|sup|log|exp|ln|perp|parallel|circ|ker|im|coker|coim|dim|codim|det|gcd|lcm|sgn|nabla|grad|divg|rot|Re|Im"
+text = "sin|cos|tan|sec|csc|cot|arcsin|arccos|arctan|arcsec|arccsc|arccot|arsinh|arcosh|artanh|arsech|arcsch|arcoth|min|max|inf|sup|log|exp|ln|perp|circ|ker|im|coker|coim|dim|codim|det|gcd|lcm|sgn|nabla|grad|divg|rot|Re|Im"
 items = text.split("|")
 result = ""
 slash = "\\"
@@ -152,19 +148,19 @@ print(result)
 <-> "\leftrightarrow"
 inv "^{-1}" (inverse)
 com "^{c}" (complement)
-smi " \setminus "
-cc " \subset "
-ceq " \subseteq "
-Nn " \cap "
-UU " \cup "
+smi "\setminus "
+cc "\subset "
+ceq "\subseteq "
+Nn "\cap "
+UU "\cup "
 nnn "\bigcap"
 uuu "\bigcup"
-WW " \wedge "
-VV " \vee "
+WW "\wedge "
+VV "\vee "
 www "\bigwedge"
 vvv "\bigvee"
 OO "\emptyset"
-<! " \triangleleft "
+<! "\triangleleft "
 text "\text{}"
 
 #######################
