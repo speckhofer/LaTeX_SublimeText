@@ -6,7 +6,7 @@ in order to find out the correct key names that can be used for keybindings.)
 #  LaTeX snippets  #
 ####################
 
-template + tab (inserts a LaTeX template)
+template + tab (inserts a LaTeX document template)
 qed + tab "\qed"
 
 ################
@@ -26,16 +26,19 @@ underbr "\underbrace{}_{}"
 overbr "\overbrace{}^{}"
 underset "\underset{}{}"
 overset "\overset{}{}"
-lr( "\left(  \right)"
-lr[ "\left[  \right]"
+lr( "\left( \right)"
+lr[ "\left[ \right]"
 set "\{ \}"
-lrset "\left\{  \right\}"
+lrset "\left\{ \right\}"
 lr| "\left| \right|"
-lan "\left\leftangle  \right\rightangle"
-floor "\left\lfloor  \right\rfloor"
-ceil "\left\lceil  \right\rceil"
-norm "\|  \|"
-lrnor "\left\|  \right\|"
+lan "\leftangle \rightangle"
+lrlan "\left\leftangle \right\rightangle"
+floor "\lfloor \rfloor"
+ceil "\lceil \rceil"
+lrfloor "\left\lfloor \right\rfloor"
+lrceil "\left\lceil \right\rceil"
+norm "\| \|"
+lrnor "\left\| \right\|"
 
 
 ##########################
@@ -44,17 +47,17 @@ lrnor "\left\|  \right\|"
 
 != "\neq "
 == "&="
-equiv "\equiv "
+equiv "\equiv"
 app "\approx "
 ~~ "\sim "
->= "\geq "
-<= "\leq "
+>= "\ge "
+<= "\le "
 >> "\gg "
 << "\ll "
 +- "\pm"
 -+ "\mp"
-** "\cdot "
-xx "\times "
+** "\cdot"
+xx "\times"
 sq "\sqrt{}"
 sr "^2"
 cb "^3"
@@ -67,7 +70,9 @@ iff "\iff "
 => "\implies "
 =< "\impliedby "
 -> "\to "
-<- "\leftarrow "
+<- "\gets "
+gets "\gets "
+mapsto "\mapsto "
 inn "\in "
 notin "\notin "
 ... "\dots"
@@ -80,9 +85,10 @@ pmod "\pmod{}"
 <> "\diamond"
 // "\frac{}{}"
 case "\begin{cases} \end{cases}"
-ncr "\binomial{}{}" (n choose r)
+bin "\binomial{}{}"
 pmat "\begin{pmatrix} \end{pmatrix}"
 bmat "\begin{bmatrix} \end{bmatrix}"
+vmat "\begin{vmatrix} \end{vmatrix}"
 
 bar "\bar{}"
 wbar "\overline{}"
@@ -113,18 +119,21 @@ dd "\mathrm{d}"
 ,, "\, "
 op "\operatorname{...}"
 par "\partial"
+span "\Span"
 
 ##########################################
 #  Special functions and math operators  #
 ##########################################
 
-sin|cos|tan|sec|csc|cot|min|max|inf|sup|log|exp|ln|perp|circ|ker|im|coker|coim|dim|codim|det|gcd|lcm|sgn|nabla|grad|divg|rot|Re|Im "\sin|\cos|..." (adds backslash)
+sin|cos|tan|sec|csc|cot|min|max|inf|sup|log|exp|ln|perp|circ|ker|img|coker|coim|dim|codim|det|deg|neg|gcd|lc|sgn|nabla|grad|divg|rot|Re|Im|span|cl|co "\sin|\cos|..." (adds backslash)
 arcsin|arccos|arctan|arcsec|arccsc|arccot "\arcsin|\arccos|..." (adds backslash)
 arsinh|arcosh|artanh|arsech|arcsch|arcoth "\arsinh|\arcosh|..." (adds backslash)
 
+Note that sinh, cosh, tanh, lcm, ... are repalced by \sinh, \cosh, ... because of the snippets for sin, cos, tan, lc, ...
+
 Python code for generating all the snippets of this section:
 
-text = "sin|cos|tan|sec|csc|cot|arcsin|arccos|arctan|arcsec|arccsc|arccot|arsinh|arcosh|artanh|arsech|arcsch|arcoth|min|max|inf|sup|log|exp|ln|perp|circ|ker|im|coker|coim|dim|codim|det|gcd|lcm|sgn|nabla|grad|divg|rot|Re|Im"
+text = "sin|cos|tan|sec|csc|cot|arcsin|arccos|arctan|arcsec|arccsc|arccot|arsinh|arcosh|artanh|arsech|arcsch|arcoth|min|max|inf|sup|log|exp|ln|perp|circ|ker|img|coker|coim|dim|codim|det|deg|neg|gcd|lc|sgn|nabla|grad|divg|rot|Re|Im|span|cl|co"
 items = text.split("|")
 result = ""
 slash = "\\"
@@ -168,8 +177,10 @@ text "\text{}"
 #######################
 
 bb "\mathbb{}"
+bf "\mathbf{}"
 cal "\mathcal{}"
 scr "\mathscr{}" -> put "\usepackage{mathrsfs}" in the preamble!
+frak "\mathfrak{}"
 ell "\ell"
 latex "\LaTeX"
 quad "\quad "

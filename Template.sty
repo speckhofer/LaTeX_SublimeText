@@ -1,5 +1,5 @@
 % Template.sty
-% Version: 26.11.2020
+% Version: 2021-12-20
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
@@ -54,6 +54,9 @@
 \usepackage{listings}
 \lstset{basicstyle=\ttfamily\footnotesize, numbers=left, breaklines=false, showstringspaces=false}
 %=========================================================
+% Change the word "Proof" to small capitalized:
+\renewenvironment{proof}{{\scshape \proofname.}}{\qed}
+%=========================================================
 % Theorems, Definitions etc.:
 \newcommand{\theoremname}{\iflanguage{german}{Satz}{Theorem}}
 \newcommand{\corollaryname}{\iflanguage{german}{Korollar}{Corollary}}
@@ -106,8 +109,8 @@
 \declaretheorem[style=blue, name=\corollaryname, unnumbered]{corollary*}
 \declaretheorem[style=red, name=Definition, sibling=theorem]{definition}
 \declaretheorem[style=red, name=Definition, unnumbered]{definition*}
-\declaretheorem[name=\examplename, sibling=theorem]{example}
-\declaretheorem[name=\examplename, unnumbered]{example*}
+\declaretheorem[style=definition, name=\examplename, sibling=theorem]{example}
+\declaretheorem[style=definition, name=\examplename, unnumbered]{example*}
 \declaretheorem[style=yellow, name=\problemname, sibling=theorem]{problem}
 \declaretheorem[style=yellow, name=\problemname, unnumbered]{problem*}
 \declaretheorem[name=\solutionname, unnumbered]{solution}
@@ -118,7 +121,7 @@
 \providecommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
 \providecommand{\ceil}[1]{\left\lceil #1 \right\rceil}
 %=========================================================
-% Number sets:
+% Mathbb commands:
 \def\N{\mathbb{N}}
 \def\Nn{\mathbb{N}_0}
 \def\Z{\mathbb{Z}}
@@ -164,5 +167,8 @@
 \DeclareMathOperator{\arsech}{arsech}
 \DeclareMathOperator{\arcsch}{arcsch}
 \DeclareMathOperator{\arcoth}{arcoth}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\cl}{cl}
+\DeclareMathOperator{\co}{co}
 %=========================================================
 \AtBeginDocument{\renewcommand\abstractname{Abstract}}
